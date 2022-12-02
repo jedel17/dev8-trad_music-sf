@@ -6,6 +6,8 @@ use App\Entity\Instrument;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
+
+// ajout des instruments
 class InstrumentFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void

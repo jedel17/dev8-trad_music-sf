@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> Accueil</h1>
+
+    {{ dump(instruments) }}
+
+    {# <?php foreach ($instruments as $instrument) : ?> #}
+
+    {# boucler sur la liste des instruments #}
+
+    {% for instrument in instruments %}
+
+        {{ instrument.name }} {# pour afficher l'instrument en type chaine de caractere #}
+
+    {% endfor %}
+
+{% endblock %}
