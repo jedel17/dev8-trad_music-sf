@@ -51,37 +51,7 @@
 
         {% for musician in musicians %}
 
-            <article class="card">
-                <img src="{{asset('uploads/'~ musician.image)}}" alt="{{musician.fullName}}">
-
-                <h3>{{ musician.fullName}}</h3>
-
-
-                <ul class="badge-List">
-                    {% for instrument in musician.instruments %}
-                        <li>
-                            <a href="#" class="badge badge-primary">
-                                {% if instrument.icon %}
-                                    <i class="{{ instrument.icon }}"></i>
-                                {% endif %}
-                                {{ instrument.name }}
-                            </a>
-                        </li>
-                    {% endfor %}
-
-                    <li>
-                        <a href="#" class="badge badge-primary">
-                            <i class="fa-solid fa-guitar"></i>
-                            Guitar
-                        </a>
-
-                    </li>
-
-                </ul>
-                <a href="#" class="btn btn-primary">See more</a>
-
-            </article>
-
+            {% include 'musician/_card.html.twig' %}
 
         {% endfor %}
 
