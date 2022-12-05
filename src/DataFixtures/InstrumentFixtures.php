@@ -14,7 +14,7 @@ class InstrumentFixtures extends Fixture
     {
          $flute = new Instrument(); //pour ajouter un instrument
         $flute->setName('Flute'); //pour envoyer les données
-        $manager->persist($flute);//
+        $manager->persist($flute);//php
 
         $guitar = new Instrument();
         $guitar->setName('Guitar');
