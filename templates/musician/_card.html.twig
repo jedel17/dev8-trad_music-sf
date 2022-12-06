@@ -1,4 +1,6 @@
 <article class="card">
+
+    <a href="{{ path('musician_detail', {'id': musician.id}) }}"></a>
     <img src="{{asset('uploads/'~ musician.image)}}" alt="{{musician.fullName}}">
 
     <h3>{{ musician.fullName}}</h3>
