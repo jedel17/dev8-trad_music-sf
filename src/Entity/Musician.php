@@ -19,6 +19,7 @@ class Musician extends User
     private ?string $lastName = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Image] //securise cote php on ne peut envoyer que des images fait des deux cotes
     private ?string $image = null;
 
     #[ORM\ManyToMany(targetEntity: Instrument::class, inversedBy: 'musicians')]
