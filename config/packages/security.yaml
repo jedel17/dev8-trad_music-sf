@@ -18,6 +18,11 @@ security:
             lazy: true
             provider: app_user_provider
 
+            form-login:
+                login-path: app_login # definit la route du login
+                check-path: app_login
+                enable_csrf: true # eviter les attaques csrf
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
