@@ -1,0 +1,10 @@
+{# affiche les instruments sur la page twig #}
+
+<ul>
+    {% for instrument in instruments %}
+        <li>
+            {{ instrument.name }}
+        </li>
+
+    {% endfor %}
+</ul>

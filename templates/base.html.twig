@@ -50,6 +50,10 @@
 <footer class="site-footer">
     <div class="container">
         <p>Trad Music &copy; 2022</p>
+
+        {# Faire appel a la méthode ListIntrument du controller InstrumentController pour afficher la liste des instruments #}
+
+        {{ render(controller('App\\Controller\\InstrumentController::listInstruments')) }}
     </div>
 </footer>
 </body>
