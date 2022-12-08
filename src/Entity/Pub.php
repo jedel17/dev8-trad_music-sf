@@ -35,7 +35,10 @@ class Pub
 
     #[ORM\ManyToOne(inversedBy: 'pubs')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Manager $manager = null; //cle etrangere//
+    private ?Manager $manager = null;
+
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null; //cle etrangere//
 
     public function __construct()//constructeur//
     {
@@ -145,6 +148,18 @@ class Pub
     public function setManager(?Manager $manager): self
     {
         $this->manager = $manager;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
