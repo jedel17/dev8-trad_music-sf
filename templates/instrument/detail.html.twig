@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ instrument.name }}
+{% endblock %}
+
+{% block body %}
+    <h1> {{ instrument.name }}</h1>
+
+<section class="container">
+    <h2>List of Musicians playing {{ instrument.name }}</h2>
+
+
+</section>
+
+<div class="grid">
+
+    {# on recupere la liste des musiciens via la table instrument #}
+
+    {% for musician in instrument.musicians %}
+        {# Inclure le fichier musician/_card.html.twig en envoyant la variable musician (et uniquement musician) #}
+        {% include 'musician/_card.html.twig' with {'musician': musician} only %}
+    {% endfor %}
+
+    {% endblock %}
+
+
+
+

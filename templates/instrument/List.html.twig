@@ -1,9 +1,17 @@
 {# affiche les instruments sur la page twig #}
 
+{# recuperer le nom d'un instrument par rapport à l'id de l'instrument
+
+    quand on clique sur l'instrument du footer j affiche l'instrument
+
+    on boucle sur id de l'instrument
+#}
+
 <ul>
     {% for instrument in instruments %}
         <li>
-            {{ instrument.name }}
+            <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}">{{ instrument.name }}</a>
+
         </li>
 
     {% endfor %}

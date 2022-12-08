@@ -50,5 +50,14 @@ class Manager extends User
         }
 
         return $this;
+
+
+    }
+
+    # resoudre le problème erreur cote formulaire admin
+    public function __toString(): string
+    {
+       return $this->getEmail();
     }
 }
+

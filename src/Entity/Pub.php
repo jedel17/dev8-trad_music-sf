@@ -165,7 +165,7 @@ class Pub
         return $this;
     }
 
-#[ORM\Prepersist]
+#[ORM\PrePersist]
 public function prePersist():void
 {
     $this->setCreatedAt(new\DateTimeImmutable());
