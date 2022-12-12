@@ -112,7 +112,7 @@ class Pub
     }
 
     /**
-     * @return Collection<int, Gig>
+     * @return Gig[]
      */
     public function getGigs(): Collection
     {
@@ -165,11 +165,11 @@ class Pub
         return $this;
     }
 
-#[ORM\PrePersist]
-public function prePersist():void
-{
-    $this->setCreatedAt(new\DateTimeImmutable());
+    #[ORM\PrePersist]
+    public function prePersist(): void
+    {
+        $this->setCreatedAt(new \DateTimeImmutable());
 
-}
+    }
 
 }
