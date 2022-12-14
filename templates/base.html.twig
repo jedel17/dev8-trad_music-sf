@@ -26,6 +26,10 @@
                 <li><a href=about">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="{{ path('app_pub_index') }}">Pub</a></li> {# creation du bouton pub#}
+                {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="{{ path('instrument_new') }}">new instrument</a> </li>
+                {% else %}
+                {% endif %}
             </ul>
             <ul>
                 <li><a href="{{ path('app_musician-edit') }}"> Profil </a> </li>

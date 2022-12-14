@@ -1,6 +1,6 @@
 <article class="card">
 
-    <a href="{{ path('musician_detail', {'id': musician.id}) }}"></a>
+
     <img src="{{asset('uploads/'~ musician.image)}}" alt="{{musician.fullName}}">
 
     <h3>{{ musician.fullName}}</h3>
@@ -27,6 +27,6 @@
         </li>
 
     </ul>
-    <a href="#" class="btn btn-primary">See more</a>
+    <a href="{{ path('musician_detail', {'id': musician.id}) }}" class="btn btn-primary">See more</a>
 
 </article>

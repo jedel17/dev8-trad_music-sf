@@ -4,13 +4,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Musician;
-use App\Entity\Pub;
+
 use App\Form\MusicianType;
-use App\Form\PubType;
 use App\Repository\MusicianRepository;
-use App\Repository\PubRepository;
-use ContainerU2mHfJm\getMusicianControllerService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,7 +35,7 @@ class MusicianController extends AbstractController
         }
         return $this->render('musician/detail.html.twig', ['musician' => $musician]);
     }
-    # route qui me dirige vers la page qui me permet de modifier un
+    # route qui me dirige vers la page qui me permet de modifier un musicien
     #[Route('/profil', name: 'app_musician-edit', methods: ['GET', 'POST'])]
     #[IsGranted('ROLE_MUSICIAN')]
     public function edit(Request $request,  MusicianRepository $musicianRepository): Response

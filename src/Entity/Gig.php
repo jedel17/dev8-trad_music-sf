@@ -28,6 +28,7 @@ class Gig
 
     #[ORM\OneToMany(mappedBy: 'gig', targetEntity: Participant::class, orphanRemoval: true)]
     private Collection $participants;
+    private $gigs;
 
     public function __construct()
     {
@@ -74,6 +75,17 @@ class Gig
 
         return $this;
     }
+    public function getManager(): ?Manager
+    {
+        return $this->manager;
+    }
+
+    public function setManager(?Manager $manager): self
+    {
+        $this->manager = $manager;
+
+        return $this;
+    }
 
     /**
      * @return Collection<int, Participant>
@@ -109,6 +121,28 @@ class Gig
     {
         return $this->getFirstName() . ' ' . $this->getLastName();
 
+    }
+
+    public function addGig(Gig $gig): self //ajoute le concert dans la table concert
+    {
+        if (!$this->gigs->contains($gig)) {
+            $this->gigs->add($gig);
+            $gig->setPub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGig(Gig $gig): self
+    {
+        if ($this->gigs->removeElement($gig)) {
+            // set the owning side to null (unless already changed)
+            if ($gig->getPub() === $this) {
+                $gig->setPub(null);
+            }
+        }
+
+        return $this;
     }
 
 
